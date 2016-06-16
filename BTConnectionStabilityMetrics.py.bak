@@ -1,0 +1,195 @@
+#!/usr/bin/python
+#! --------------------
+#! Script written by Antoine Falempin
+#! version 2016-04-11
+#! --------------------
+import os
+import re
+import sys, getopt
+import fnmatch
+import datetime, time #, timedelta
+#from datetime import datetime, timedelta
+from collections import Counter
+cnt = Counter ()
+
+remote = False
+filepath = '.\\swatch_logs\\'
+global SuccessfullConnection = "CONNECT_DEVICE | - | Successfully connected to Device"
+global AppVersionPattern = 'App-version: (\d.\d.\d)'
+global VersionInfoPattern = 'VersionInformation_t{coolRisc_HW_version=(\d+), coolRisc_SW_version=(\d+), arm_HW_version=(\d+), arm_miniBootLoader_SW_version=(\d+), arm_fotaBootLoader_SW_version=(\d+), arm_app_SW_version=(\d+), stack_HW_version=(\d+), stack_SW_version=(\d+), em6420_HW_version=(\d+), adxl_HW_version=(\d+), em9301_HW_version=(\d+)}'
+
+def GetFileList(date):   
+	print ('')
+	fileList = []
+	filepattern = 'log_'+ date +'*.log'
+	print ('path search = ', filepath)
+	print ('file search', filepattern)
+	if (os.path.isdir(filepath)):
+		if not(os.path.exists(filepath)):
+			print('Directory does not exist !')
+		else:
+			allFiles = os.listdir(filepath)
+			print ('file found = ', len(allFiles))
+			fileList = fnmatch.filter(allFiles, filepattern)
+			print ('file matches = ', len(fileList))
+		
+	print ('')
+	return fileList
+
+def ComputeStats(filepath, fileList):
+	txtpatternConnected = 'CONNECT_DEVICE'
+	txtpatternDisconnect = 'BluetoothProfile.STATE_DISCONNECTED'
+	txtpatternCallback = 'Callback'
+	txtpatternFailure = 'failure'
+	tCt = 0	
+	tDt = 0
+	tCk = 0
+	tFl = 0
+	
+	print ('filename' + '\t\t' +  'AppVersion' + '\t'  +  'coolRisc' + '\t'  +  'ARM' + '\t' +  'connexion' + '\t' + 'disconnex' + '\t' + 'callback'+ '\t' + 'failure') 
+	for file in fileList:
+		appVersion=''
+		coolRisc_SW_version =''
+		arm_app_SW_version=''
+		fCnt=0
+		fDst=0
+		fCbk=0
+		fFl =0
+		ff = filepath + file
+		#print(ff)
+		fileR = open (ff, 'r').read()
+		Lines  = fileR.splitlines()
+		for line in Lines:
+			#lineR = re.split(' |.',line)
+			lineR = line.split(' ')
+
+			# version =
+			m1 = re.search(AppVersionPattern, line)
+			if m1:
+				appVersion = m1.group(1)
+				
+			# microP version
+			m2 = re.search(VersionInfoPattern, line )
+			if m2:
+				coolRisc_SW_version = m2.group(2)
+				arm_app_SW_version = m2.group(6)
+				
+			fCnt += lineR.count(txtpatternConnected)
+			fDst += lineR.count(txtpatternDisconnect)
+			fCbk += lineR.count(txtpatternCallback)
+			fFl += lineR.count(txtpatternFailure)
+		
+		tCt+=fCnt
+		tDt+=fDst
+		tCk+=fCbk
+		tFl+=fFl
+		
+		print (file + ' \t ' + appVersion  + ' \t ' + coolRisc_SW_version + ' \t ' + arm_app_SW_version + ' \t ' + str(fCnt) + ' \t\t ' + str(fDst)+ ' \t ' + str(fCbk) + ' \t ' + str(fFl))
+	print ('------------------------------------- Total ---------------------------------')
+	print ( ' Total \t\t\t\t\t ' +  str(tCt) + ' \t\t ' + str(tDt)+ ' \t ' + str(tCk)+ ' \t ' + str(tFl))
+	print ('')
+	if (tCt>0):
+		print (' Ratio Disconnex = ', '{0:.2%}'.format(tDt/tCt))	
+	if (tDt>0):
+		print (' Ratio Callback = ', '{0:.2%}'.format(tCk/tDt))
+		print (' Ratio failure = ', '{0:.2%}'.format(tFl/tDt))
+	else:
+		print (' Ratio 0.0%')
+	print ('')
+	print ('------------------------')
+	return
+
+def process2days(date, filepath):
+	oDate = datetime.datetime.strptime(date, '%Y%m%d')
+	oYesterDay = datetime.date.fromordinal(oDate.toordinal()-1)
+	sYesdate = oYesterDay.strftime("%Y%m%d")
+	sDate = oDate.strftime("%Y%m%d")
+
+	print ('Previous date = ', sYesdate)
+	fileList1 = GetFileList(sYesdate)
+	ComputeStats(filepath, fileList1)
+	print ('Selected date = ', sDate)
+	fileList2 = GetFileList(sDate)
+	ComputeStats(filepath, fileList2)
+	return	
+
+
+def process(remote, date, filepath):	
+	#yesterday = datetime.date.today() - timedelta(days=1)
+	
+	yesterday = datetime.date.fromordinal(datetime.date.today().toordinal()-1)
+	yesdate = yesterday.strftime("%Y%m%d")
+	today = datetime.date.today()
+	todate = today.strftime("%Y%m%d")
+	
+	print ('Yesterday=' + yesdate)
+	print ('Today=' + todate)
+
+	print ('Input date is ', date)
+	print ('Remote process', remote)
+	print ('------------------------')
+	if not date:
+		if not (remote):
+			date = input('Enter a date, as ' + todate + '\n OR\n just simply press enter :')
+			process2days(date, filepath)
+		else:
+			process2days(todate, filepath)
+	else:
+		process2days(date, filepath)
+	
+	if not (remote):
+		input("press any key")
+	
+def main(argv):
+	global remote, filepath
+	date = ''
+	try:
+		opts, args = getopt.getopt(argv,"hd:",["sdate="])
+	except getopt.GetoptError:
+		print ('test.py -d <date>')
+		sys.exit(2)
+	
+	if(len(args)>0):	
+		remote = True
+		
+	for opt, arg in opts:
+		if opt == '-h':
+			print ('test.py -d <date>')
+			sys.exit()
+		elif opt in ("-d", "--sdate"):
+			date = arg
+			remote = True
+	
+	process(remote, date, filepath)
+	
+	return
+
+if __name__ == "__main__":
+	main(sys.argv[1:])
+
+
+# import os
+# included_extenstions = ['log', 'lg']
+# file_names = [fn for fn in os.listdir(relevant_path)
+		# if any(fn.endswith(ext) for ext in included_extenstions)]
+	
+# for file in fileList:
+	# words = re.findall(r'\w+', open(filepath + file).read().lower())
+# word_counts = Counter(words)
+# top_three = word_counts.most_common(3)
+# print(top_three)
+# input("press any key")
+	
+	#cnt[file]+=1
+	#cnt[file]+= fCnt
+	# for line in open (filepath + file, 'r'):
+		# for word in line.split():
+			# cnt[word]+=1
+		
+# for i, v  in enumerate(cnt, start=1):   # Python indexes start at zero
+    # print (v, i)
+
+#print cnt
+#print('\n'.join(cnt))
+#print(*cnt)
+#print str(cnt)[1:-1]

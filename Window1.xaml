@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+	x:Class="WPF_S39_Commander.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:local="clr-namespace:WPF_S39_Commander.Control"
+	Title="WPF_S39_ADB_Commander"
+	Width="1200"
+	Height="1000"
+	x:Name="window1"
+	Loaded="window1_Loaded"
+	Closing="Window1_Closing"
+	Closed="Window1_Closed">
+	<!-- 
+	<Window.Resources>
+        <local:CommandListClass x:Key="MyCommands"/>
+    </Window.Resources>
+ 	-->
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="6*" />
+			<RowDefinition
+				Height="5" />
+			<RowDefinition
+				Height="3*" />
+		</Grid.RowDefinitions>
+		<DockPanel
+			Grid.Row="0"
+			LastChildFill="True">
+			<!-- ¨Right Menu¨ -->
+			<StackPanel
+				DockPanel.Dock="Right"
+				Orientation="Vertical">
+				<!-- 
+				<GroupBox
+					Header="LogCat">
+					<Grid
+						HorizontalAlignment="Center">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="5*" />
+							<ColumnDefinition
+								Width="5*" />
+						</Grid.ColumnDefinitions>
+						<Grid.Children>
+							<Button
+								Grid.Column="0"
+								Name="LogCatStart"
+								Content="Start"
+								Click="LogCatStart_Click"
+								Height="50" />
+							<Button
+								Grid.Column="1"
+								Name="LogCatStop"
+								Content="Stop"
+								Click="LogCatStop_Click"
+								Height="50" />
+						</Grid.Children>
+					</Grid>
+				</GroupBox>
+ 				-->
+				<GroupBox
+					Header="Android">
+					<StackPanel>
+						<Button
+							Name="ScreenCapture"
+							Content="Snapshot"
+							Click="ScreenCapture_Click"
+							Height="50" />
+					<Button
+						Name="GetTodayLogs"
+						Content="TodayLOGs"
+						Click="GetTodayLogsPull_Click"
+						Height="50" />
+					<Button
+						Name="GetALLlogs"
+						Content="Dump Logs"
+						Click="GetALLlogsPull_Click"
+						Height="50" />
+					</StackPanel>
+				</GroupBox>
+				<GroupBox
+					Header="Test Data">
+					<StackPanel>
+						<Button
+							Name="PackTestDataBtn"
+							Content="Pack"
+							Click="PackTestData_Click"
+							Height="50" />
+						<Button
+							Name="OpenSaveFolderBtn"
+							Content="Folder"
+							Click="OpenSaveFolderBtn_Click"
+							Height="50" />
+						<Button
+							Name="OpenExcelReportBtn"
+							Content="Excel"
+							Click="OpenExcelReportBtn_Click"
+							Height="50" />
+						<Button
+							Name="LaunchPythonScript"
+							Content="Stats"
+							Click="LaunchPythonScript_Click"
+							Height="50" />
+					</StackPanel>
+				</GroupBox>
+			</StackPanel>
+			<!-- ¨Top Menu¨ -->
+			<StackPanel
+				DockPanel.Dock="Top"
+				Orientation="Horizontal">
+				<GroupBox
+					Header="PC Time">
+					<local:ClockControl
+						x:Name="WHClock"
+						Height="120" />
+				</GroupBox>
+				<StackPanel>
+					<GroupBox>
+						<WrapPanel
+							Height="40">
+							<Label
+								Content="WH Name : " />
+							<TextBox
+								Name="WHName"
+								IsEnabled="False"
+								Text="" />
+							<Label
+								Content="MAC : " />
+							<TextBox
+								Name="MACaddress"
+								Text="0C:F3:EE:12:34:56"
+								IsEnabled="False"
+								FontSize="10" />
+							<Label
+								Content="MC Name : " />
+							<TextBox
+								Name="MCName"
+								Text="{Binding MACRadical, Mode=TwoWay}" />
+						</WrapPanel>
+					</GroupBox>
+					<WrapPanel
+						Height="40">
+						<Label
+							Content="WH List : " />
+						<ComboBox
+							Name="CbxWatchHeads"
+							IsEditable="False"
+							SelectionChanged="CbxWatchHeads_SelectionChanged" />
+					</WrapPanel>
+					<!-- Sliders  -->
+					<GroupBox Header="S39 Automation Delays">
+						<StackPanel Orientation="Vertical">
+							<local:DynamicInjectionControl x:Name="InjectionSettingBox" />
+						</StackPanel>
+					</GroupBox>
+					<GroupBox  Header="S39 Version info">
+							<Label Name="ConnectionVersion" Content="Unknown" FontSize="9" />
+					</GroupBox>
+				</StackPanel>
+				<StackPanel>
+					
+					<GroupBox
+						Header="Remote Test App">
+						<StackPanel Orientation="Vertical">
+							<Grid
+								HorizontalAlignment="Center">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition
+										Width="70" />
+									<ColumnDefinition
+										Width="70" />
+									<ColumnDefinition
+										Width="70" />
+								</Grid.ColumnDefinitions>
+								<Button
+									Name="StartRemoteApp"
+									Content="Start"
+									Click="RemoteAppStart_Click"
+									Height="50"
+									Grid.Column="0" />
+								<Button
+									Name="RestartADBServer"
+									Content="Restart ADB server"
+									Click="ADBServerRestart_Click"
+									Grid.Column="1"
+									Height="50" />
+								<Button
+									Name="ShutRemoteApp"
+									Content="Stop"
+									Click="RemoteAppShut_Click"
+									Grid.Column="2"
+									Height="50" />
+							</Grid>
+						</StackPanel>
+					</GroupBox>
+					
+					<GroupBox
+						Header="Watch connection ..."
+						MaxHeight="80">
+						<Grid
+							HorizontalAlignment="Center"
+							Grid.IsSharedSizeScope="true">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									SharedSizeGroup="A" />
+								<ColumnDefinition
+									SharedSizeGroup="A" />
+								<ColumnDefinition
+									SharedSizeGroup="A" />
+							</Grid.ColumnDefinitions>
+							<Grid.Children>
+								<Button
+									Grid.Column="0"
+									Height="50"
+									Name="WHConnect"
+									Content="Connect"
+									Click="WHConnection_Click" />
+								<Button
+									Grid.Column="1"
+									Height="50"
+									Name="WHConnectStatus"
+									Content="Status"
+									Click="WHConnectStatus_Click"
+									Background="LightGreen" />
+								<Button
+									Grid.Column="2"
+									Height="50"
+									Name="WHDisconnect"
+									Content="Disconnect"
+									Click="WHDisconnect_Click" />
+							</Grid.Children>
+						</Grid>
+					</GroupBox>
+				</StackPanel>
+
+				<StackPanel
+					Orientation="Vertical">
+					<GroupBox
+						Header="S39 Connexion">
+						<StackPanel Orientation="Vertical" x:Name="ConnectionPanel">
+							<Label Name="ConnectionName" Content="Unknown" />
+							<Label Name="ConnectionBox" Content="Unknown" />
+						</StackPanel>
+					</GroupBox>
+					<GroupBox Header="BLE Timeout">
+						<StackPanel>
+							<StackPanel Orientation="Horizontal">
+								<CheckBox Name="chkHeartBeat" Content="Heartbeat" IsChecked="{Binding HeartBeatEnabled}" Checked="ChkHeartBeat_Changed" Unchecked="ChkHeartBeat_Changed" VerticalAlignment="Center"/>
+								<Label Name="LblHeartBeat_now" VerticalAlignment="Center"/><Label Name="LblHeartBeat_total" VerticalAlignment="Center"/>
+							</StackPanel>
+							<local:CountDownControl x:Name="BlETimeoutCountDown" TimeSpanGoal="0:4:0" TimeFormat="HH:mm:ss" OnCountDownComplete="BlETimeoutCountDown_OnCountDownComplete" />
+<!--						<local:CountDownCircleControl x:Name="BLETimeout" />-->
+						</StackPanel>
+					</GroupBox>
+				</StackPanel>
+			</StackPanel>
+			<!-- Center Window -->
+			<TabControl>
+				<!-- i -->
+				<TabItem Header="Scenario">
+					<DockPanel
+						LastChildFill="True">
+						<WrapPanel
+							DockPanel.Dock="Top">
+							<Label
+								Content="Test Name : " />
+							<TextBox Name="TCNameBox" Text="{Binding TCName, Mode=TwoWay}" FontSize="12" />
+						</WrapPanel>
+						<local:ProgressButton
+							x:Name="Btn_SendMultiCommand"
+							DockPanel.Dock="Bottom"
+							Height="100"
+							Text1="Send Instruction Sequence" Text2=""
+							Click="SendMultiCommand_Click" />
+						<Grid DockPanel.Dock="Top">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="1*" />
+								<ColumnDefinition
+									Width="1*" />
+							</Grid.ColumnDefinitions>
+							<Button
+								Grid.Column="0"
+								Name="OpenTestScenarioBtn"
+								Content="Load Test Scenario"
+								Click="OpenTestScenario_Click" />
+							<Button
+								Grid.Column="1"
+								Name="SaveTestScenarioBtn"
+								Content="Save Test Scenario"
+								Click="SaveTestScenario_Click" />
+						</Grid>
+						<TextBox
+							Name="SequenceTextBox"
+							TextWrapping="Wrap"
+							AcceptsReturn="True"
+							VerticalScrollBarVisibility="Visible" />
+					</DockPanel>
+				</TabItem>
+				<!-- ii -->
+				<TabItem Header="Instruction">
+					<DockPanel
+						LastChildFill="True">
+						<Button
+							Name="SendCommand"
+							DockPanel.Dock="Bottom"
+							Height="100"
+							Content="Send Command"
+							Click="Send_Command_Click"></Button>
+						<WrapPanel>
+							<Label
+								Content="WH command" />
+						</WrapPanel>
+						<ComboBox
+							Name="CbxCommands"
+							IsEditable="True" />
+					</DockPanel>
+				</TabItem>
+				<!-- iii -->
+				<TabItem Header="Settings">
+					<StackPanel Orientation="Horizontal">
+						<StackPanel Orientation="Vertical">
+							<GroupBox Header="PC Chrono">
+								<local:DigitalClockSimple x:Name="PCChrono" Height="64" DateVisibility="Hidden" EditableTime="False"
+									BtnGetContent="Start" BtnSetContent="Reset" />
+							</GroupBox>
+							<GroupBox Header="S39 Settings">
+								<local:WatchSettingsControl x:Name="WHSettingBox" />
+							</GroupBox>
+						</StackPanel>
+						<StackPanel Orientation="Vertical">
+							
+							<!-- TIME -->
+							
+							<GroupBox
+								Header="S39 Time">
+								<StackPanel>
+									<DockPanel LastChildFill="True">
+										<DatePicker Name="WHDatePicker" SelectedDateChanged="WHDatePicker_SelectedDateChanged" Height="25" /> 
+									</DockPanel>
+								<Grid HorizontalAlignment="Center" Grid.IsSharedSizeScope="true">
+									<Grid.Resources>
+										 <Style x:Key="GreenButtonStyle" TargetType="Button" >
+											<Setter Property="Height" Value="25"/>
+											<Setter Property="FontSize" Value="10"/>
+										</Style>
+									</Grid.Resources>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="Auto" />
+										<RowDefinition Height="Auto" />
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition SharedSizeGroup="B" />
+										<ColumnDefinition SharedSizeGroup="B" />
+										<ColumnDefinition SharedSizeGroup="B" />
+										<ColumnDefinition SharedSizeGroup="B" />
+										<ColumnDefinition SharedSizeGroup="B" />
+										<ColumnDefinition SharedSizeGroup="B" />
+									</Grid.ColumnDefinitions>
+<!--									
+										  <Button.LayoutTransform>
+										    <RotateTransform CenterX="0.5" CenterY="0.5" Angle="-45"/>
+										  </Button.LayoutTransform>
+-->
+									<Grid.Children>
+										<Button Name="SetPrevDayTime" Content="PrevDay" Click="SetPrevDayTime_Click" Grid.Row="0" Grid.Column="0" Style="{StaticResource GreenButtonStyle}" >
+										</Button>
+										<Button Name="SetPrevHourTime" Content="PrevHour" Click="SetPrevHourTime_Click" Grid.Row="0" Grid.Column="1" Style="{StaticResource GreenButtonStyle}" >
+										</Button>
+										<Button Name="SetNowTime" Content="Now" Click="SetNowTime_Click" Grid.Row="0" Grid.Column="2" Style="{StaticResource GreenButtonStyle}" >
+										</Button>
+										<Button Name="SetNext5MTime" Content="Next5Min" Click="SetNext5MTime_Click" Grid.Row="0" Grid.Column="3" Style="{StaticResource GreenButtonStyle}" >
+										</Button>
+										<Button Name="SetNextHourTime" Content="NextHour" Click="SetNextHourTime_Click" Grid.Row="0" Grid.Column="4" Style="{StaticResource GreenButtonStyle}" >
+										</Button>
+										<Button Name="SetMidnightTime" Content="Midnight" Click="SetMidnightTime_Click" Grid.Row="0" Grid.Column="5"  Style="{StaticResource GreenButtonStyle}">
+										</Button>
+										<Button Name="SetNextDayTime" Content="NextDay" Click="SetNextDayTime_Click" Grid.Row="1" Grid.Column="0"  Style="{StaticResource GreenButtonStyle}">
+										</Button>
+										<Button Name="SetNextMonthTime" Content="NextMonth" Click="SetNextMonthTime_Click" Grid.Row="1" Grid.Column="1"  Style="{StaticResource GreenButtonStyle}">
+										</Button>
+										<Button Name="SetEndOfMonthTime" Content="EndOfMonth" Click="SetEndOfMonthTime_Click" Grid.Row="1" Grid.Column="2"  Style="{StaticResource GreenButtonStyle}">
+										</Button>
+										<Button Name="SetNextYearTime" Content="NextYear" Click="SetNextYearTime_Click" Grid.Row="1" Grid.Column="3"  Style="{StaticResource GreenButtonStyle}">
+										</Button>
+										<Button Name="SetEndOfYearTime" Content="EndOfYear" Click="SetEndOfYearTime_Click" Grid.Row="1" Grid.Column="4"  Style="{StaticResource GreenButtonStyle}">
+										</Button>
+									</Grid.Children>
+								</Grid>
+									<!-- Clocks -->
+									<local:DigitalClockSimple x:Name="WHDClock" EditableDate="False" />
+									<local:TimeSettingsControl x:Name="TimeSettingBox" PropertyChanged="TimeSettingBox_PropertyChanged" />
+								</StackPanel>
+							</GroupBox>
+							<!-- ALARM -->
+							<GroupBox
+								Header="S39 Alarm">
+								<StackPanel>
+								<local:DigitalClockSimple x:Name="WHDAlarm" DateVisibility="Hidden" />
+									<local:AlarmSettingsControl x:Name="AlarmSettingsBox" PropertyChanged="AlarmSettingsBox_PropertyChanged" />
+								</StackPanel>
+							</GroupBox>
+						</StackPanel>
+						<StackPanel>
+							<GroupBox Header="User Settings">
+								<StackPanel>
+									<Label Name="WatchUserLabel" />
+									<local:WatchUserSettingsControl x:Name="WatchUserSettings" PropertyChanged="WatchUserSettings_PropertyChanged"/>
+								</StackPanel>
+							</GroupBox>
+						</StackPanel>
+						<local:WatchGoalSettingsControl x:Name="WatchGoalSettingsBox" PropertyChanged="WatchGoalSettingsBox_PropertyChanged" />
+					</StackPanel>
+				</TabItem>
+				<!-- iV -->
+				<TabItem Header="Protocol setup">
+					<DockPanel>
+						<WrapPanel
+							DockPanel.Dock="Top">
+							<Label
+								Content="Start command" />
+							<TextBox
+								Name="StartCommand"
+								DockPanel.Dock="Top"></TextBox>
+							</WrapPanel>
+							<WrapPanel
+							DockPanel.Dock="Top">
+							<TextBox
+								Name="StopCommand"></TextBox>
+						</WrapPanel>
+						<WrapPanel
+							DockPanel.Dock="Top">
+							<Label
+								Content="Remote command" />
+							<TextBox
+								Name="FirstCommand"
+								DockPanel.Dock="Top"></TextBox>
+						</WrapPanel>
+					</DockPanel>
+				</TabItem>
+			</TabControl>
+		</DockPanel>
+		<!-- Splitter -->
+		<GridSplitter
+			Grid.Row="1"
+			Height="5"
+			HorizontalAlignment="Stretch" />
+		<!-- Bottom Menu -->
+		<TabControl
+			Name="TabBottomControl"
+			Grid.Row="2">
+			<TabItem
+				Name="AuditTab"
+				Header="ADB Command Console">
+				<local:AdvancedSuperTextBlock x:Name="HistoryBox" />
+<!--				<TextBox
+					Name="HistoryBox"
+					FontSize="9"
+					AcceptsReturn="True"
+					TextWrapping="Wrap"
+					IsReadOnly="True"
+					MaxLength="500"
+					ScrollViewer.HorizontalScrollBarVisibility="Auto"
+					ScrollViewer.VerticalScrollBarVisibility="Visible"></TextBox>
+-->
+			</TabItem>
+			<TabItem
+				Name="MSPromptTab"
+				Header="Output Microsoft Console">
+				<TextBox
+					Name="MSPromptBox"
+					FontSize="9"
+					AcceptsReturn="True"
+					TextWrapping="Wrap"
+					IsReadOnly="True"
+					MaxLength="500"
+					ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+					ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBox>
+			</TabItem>
+			<TabItem
+				Name="LogcatLiveTab"
+				Header="Output Android Console (Live)">
+				<local:AdvancedSuperTextBlock x:Name="ADBBox" FontSize="10" />
+			</TabItem>
+			<TabItem
+				Header="CSV (offline)">
+				<DockPanel LastChildFill="True">
+					<local:LabelTextBox x:Name="CSVSAvePathBox" LabelContent="Save Location for CSV reports : " TextBoxText="" TextBoxIsReadOnly="True" DockPanel.Dock="Bottom"/>
+					<Button Name="OpenLogFile" Content="Open Logfile" Click="OpenLogFile_Click" />
+				</DockPanel>
+			</TabItem>
+			<TabItem
+				Name="Interpret"
+				Header="S39 Variable">
+				<local:AdvancedSuperTextBlock x:Name="InterpretBox" />
+			</TabItem>
+			<TabItem Name="DataInjectTab" Header="Data Inject">
+				<TextBox Name="InjectionBox"
+					AcceptsReturn="True"
+					TextWrapping="NoWrap"
+					IsReadOnly="True"
+					MaxLength="500"
+					ScrollViewer.HorizontalScrollBarVisibility="Auto"
+					ScrollViewer.VerticalScrollBarVisibility="Visible"></TextBox>
+			</TabItem>
+			<TabItem Name="FOTATab" Header="FOTA Update">
+				<local:FOTAUserControl x:Name="FOTAUserControlBox" />
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>

@@ -1,0 +1,55 @@
+<UserControl x:Class="WPF_S39_Commander.Control.WatchUserSettingsControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:WPF_S39_Commander.Control">
+	
+	<UserControl.Resources>
+		
+		<local:IntToStringConverter x:Key="IntToStringConverter" />
+		<Style TargetType="local:LabelTextBox">
+			<Setter Property="LabelWidth" Value="100" />
+			<Setter Property="HorizontalContentAlignment" Value="Right" />
+		</Style>
+	</UserControl.Resources>
+		
+	<Grid>
+		<StackPanel Orientation="Vertical" >
+			<GroupBox Header="User Birthday" >
+				<StackPanel>
+					<local:LabelTextBox x:Name="birthdayDayBox" LabelContent="birthday Day" TextBoxText="{Binding birthdayDay}" TextBoxIsReadOnly="True" />
+					<local:LabelTextBox x:Name="birthdayMonthyBox" LabelContent="birthday Month" TextBoxText="{Binding birthdayMonth}" TextBoxIsReadOnly="True"  />
+					<local:LabelTextBox x:Name="birthdayYearBox" LabelContent="birthday Year" TextBoxText="{Binding birthdayYear}" TextBoxIsReadOnly="True" />
+					<DatePicker Name="BirthdayDatePicker" SelectedDateChanged="BirthdayDatePicker_SelectedDateChanged" />
+				</StackPanel>
+			</GroupBox>
+			<GroupBox Header="User Physics">
+				<StackPanel>
+					<local:LabelTextBox x:Name="AgeBox" LabelContent="Age" TextBoxText="{Binding age}"  />
+					<local:LabelTextBox x:Name="GenderBox" LabelContent="Gender" TextBoxText="{Binding gender}" />
+					<local:LabelTextBox x:Name="WeightBox" LabelContent="Weight" TextBoxText="{Binding weight}" />
+					<local:LabelTextBox x:Name="HeightBox" LabelContent="Height" TextBoxText="{Binding height}" />
+					<local:LabelTextBox x:Name="StrideBox" LabelContent="Stride" TextBoxText="{Binding stride}" />
+				</StackPanel>
+			</GroupBox>
+			<GroupBox Header="Podium">
+				<StackPanel>
+					<local:LabelTextBox x:Name="RankBox" LabelContent="Rank" TextBoxText="{Binding rank, Mode=TwoWay, Converter={StaticResource IntToStringConverter}}" />
+				</StackPanel>
+			</GroupBox>
+
+			<Label Name="LabelSpace" Content="                 " IsEnabled="False" />
+		</StackPanel>
+		<Button
+			Name="BtnGet"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Bottom"
+			Content="Get"
+			Click="BtnGet_Click" />
+		<Button
+			Name="BtnSet"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Bottom"
+			Content="Set"
+			Click="BtnSet_Click" />
+	</Grid>
+</UserControl>

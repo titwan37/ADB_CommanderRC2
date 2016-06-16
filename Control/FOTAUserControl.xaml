@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+	x:Class="WPF_S39_Commander.Control.FOTAUserControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:local="clr-namespace:WPF_S39_Commander.Control">
+	<Grid>
+		<DockPanel
+			LastChildFill="True">
+			<StackPanel DockPanel.Dock="Top" 
+				Orientation="Vertical">
+				<DockPanel>
+					<Button Grid.Column="0" Name="ButtonFileOpen1" Content="Select HEX App File (03)" Click="ButtonFileOpen1_Click" DockPanel.Dock="Right" />
+					<local:LabelTextBox x:Name="HexFileBox1" LabelContent="Hex App File (03)" TextBoxText="{Binding HexAppFilepath}" TextBoxIsReadOnly="True" MinWidth="250" />
+				</DockPanel>
+				<DockPanel>
+					<Button Grid.Column="0" Name="ButtonFileOpen2" Content="Select HEX Fota File (04)" Click="ButtonFileOpen2_Click" DockPanel.Dock="Right" />
+					<local:LabelTextBox x:Name="HexFileBox2" LabelContent="Hex Fota File (04)" TextBoxText="{Binding HexFotaFilepath}" TextBoxIsReadOnly="True" MinWidth="250" />
+				</DockPanel>
+				<Grid
+					HorizontalAlignment="Center"
+					Grid.IsSharedSizeScope="true">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition SharedSizeGroup="A" />
+						<ColumnDefinition SharedSizeGroup="A" />
+						<ColumnDefinition SharedSizeGroup="A" />
+						<ColumnDefinition SharedSizeGroup="A" />
+						<ColumnDefinition SharedSizeGroup="A" />
+					</Grid.ColumnDefinitions>
+					<Grid.Children>
+						<Button Grid.Column="0" Name="ButtonPushFile" Content="Push PC -> Android" Click="ButtonPushFile_Click" />
+						<Button Grid.Column="2" Name="ButtonUploadFile" Content="Upload Android -> WH" Click="ButtonUploadFile_Click" />
+						<Button Grid.Column="4" Name="ButtonFOTALogSave" Content="FOTA Log Save" Click="ButtonSaveFOTAlog_Click" />
+					</Grid.Children>						
+				</Grid>
+			</StackPanel>
+			<GroupBox Header="FOTA Verbose">
+				<local:AdvancedSuperTextBlock x:Name="FOTA_ADBBox" FontSize="10" />
+			</GroupBox>
+		</DockPanel>
+	</Grid>
+</UserControl>

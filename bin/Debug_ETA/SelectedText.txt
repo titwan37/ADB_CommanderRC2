@@ -1,0 +1,6 @@
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+--------- beginning of /dev/log/system
+--------- beginning of /dev/log/main
+05-02 14:45:37.448 D/SwatchClient( 5917): Commands on Stack: 1 NexCommand: FotaUpdateFinished
+05-02 14:45:37.498 D/SwatchClient( 5917): logToDisk: App-version: 1.4.7 | Device: samsung | Model: SM-T365 | OS: 4.4.4 | Status = SUCCESS | FotaUpdateFinished | - | WH updated successfully - Duration for update: 6min:57sec | Runtime = 1ms

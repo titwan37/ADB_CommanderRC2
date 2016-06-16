@@ -1,0 +1,20 @@
+<UserControl x:Class="WPF_S39_Commander.Control.LabelTextBox"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:WPF_S39_Commander.Control">
+		<UserControl.Resources>
+			<local:DebugDummyConverter x:Key="DebugDummyConverter" />
+		
+			<ControlTemplate x:Key="LabelTextBoxTemplate" TargetType="TextBox">
+				<DockPanel LastChildFill="True">
+					<Label Name="Label1" Content="{Binding LabelContent}" DockPanel.Dock="Left" />
+					<!-- Width="{Binding LabelWidth}"  -->
+					<TextBox Name="TextBox1" Text="{Binding TextBoxText, Converter={StaticResource DebugDummyConverter}, Mode=TwoWay}" IsReadOnly="{Binding TextBoxIsReadOnly}" />
+				</DockPanel>
+			</ControlTemplate>
+		</UserControl.Resources>	
+<!--	-->
+		<Grid>
+			<TextBox x:Name="tb1" Template="{StaticResource LabelTextBoxTemplate}" />
+		</Grid>
+</UserControl>

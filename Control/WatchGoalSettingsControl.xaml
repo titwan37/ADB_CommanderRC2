@@ -1,0 +1,50 @@
+<UserControl x:Class="WPF_S39_Commander.Control.WatchGoalSettingsControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:WPF_S39_Commander.Control">
+	<UserControl.Resources>
+		<local:StringToBooleanConverter x:Key="StringToBooleanConverter" />
+		<local:OnOffToBooleanConverter x:Key="OnOffToBooleanConverter" />
+		<local:IntToStringConverter x:Key="IntToStringConverter" />
+	</UserControl.Resources>
+	<StackPanel Orientation="Vertical" Margin="6">
+			<GroupBox Header="Goal Settings" >
+		 		<StackPanel Orientation="Vertical">
+					<Label Content="      " />
+					<CheckBox Name="cbGoal1" IsChecked="{Binding Path=GoalState, Mode=TwoWay, Converter={StaticResource OnOffToBooleanConverter}}">enabled</CheckBox>
+					<Label Content="      " />
+					<local:LabelTextBox x:Name="goalBox" LabelContent="Target value" TextBoxText="{Binding Path=Goal, Mode=TwoWay, Converter={StaticResource IntToStringConverter}}" LabelWidth="40" />
+					<Grid>
+					<Button
+						Name="BtnGet"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Bottom"
+						Content="Get"
+						Click="BtnGet_Click" />
+					<Button
+						Name="BtnSet"
+						HorizontalAlignment="Right"
+						VerticalAlignment="Bottom"
+						Content="Set"
+						Click="BtnSet_Click" />
+					</Grid>
+				</StackPanel>
+			</GroupBox>
+			<GroupBox Header="Fitness Calculation" >
+		 		<StackPanel Orientation="Vertical" x:Name="FitnessStack" DataContext="{Binding Energy}">
+					<Label Content="      " />
+					<local:LabelTextBox x:Name="WalkBox" LabelContent="Distance Walk (km)" TextBoxText="{Binding Energy, Path=Dwalk}" />
+					<local:LabelTextBox x:Name="RunBox" LabelContent="Distance Run (km)" TextBoxText="{Binding Energy, Path=Drun}" />
+					<local:LabelTextBox x:Name="kcalBox" LabelContent="Energy (KCal)" TextBoxText="{Binding Energy, Path=KCAL}" />
+					<Grid>
+					<Button
+						Name="BtnCal"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Bottom"
+						Content="Calculate"
+						Click="BtnCal_Click" />
+					</Grid>
+				</StackPanel>
+			</GroupBox>
+	</StackPanel>
+</UserControl>

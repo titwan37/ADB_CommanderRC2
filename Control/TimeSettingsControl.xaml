@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="WPF_S39_Commander.Control.TimeSettingsControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:WPF_S39_Commander.Control"
+	>
+	<UserControl.Resources>
+		<local:StringToBooleanConverter x:Key="StringToBooleanConverter" />
+	</UserControl.Resources>
+	<Grid>
+		<StackPanel Orientation="Horizontal">
+		<StackPanel Orientation="Vertical">
+			<Label Content="Beep" />
+		    <RadioButton GroupName="BEEPGroup" Content="on" IsChecked="{Binding Beep, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=on,  Mode=TwoWay}" />
+		    <RadioButton GroupName="BEEPGroup" Content="off" IsChecked="{Binding Beep, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=off, Mode=TwoWay}" />
+		</StackPanel>
+
+			<StackPanel Orientation="Vertical">
+			<Label Content="Culture" />
+			<RadioButton GroupName="DateTimeCultureGroup" Content="EU"  IsChecked="{Binding DateTimeCulture, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=EU, Mode=TwoWay}"  />
+			<RadioButton GroupName="DateTimeCultureGroup" Content="US" IsChecked="{Binding DateTimeCulture, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=US, Mode=TwoWay}" />
+		</StackPanel>
+		
+		<StackPanel Orientation="Vertical">
+			<Label Content="12/24 Format" />
+		    <RadioButton GroupName="HourFormatGroup" Content="12" IsChecked="{Binding HourFormat, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=12,  Mode=TwoWay}" />
+		    <RadioButton GroupName="HourFormatGroup" Content="24" IsChecked="{Binding HourFormat, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=24,  Mode=TwoWay}" />
+		</StackPanel>
+
+		<local:LabelTextBox x:Name="BeatTimeBox" LabelContent="BeatTime" TextBoxText="{Binding BeatTime, Mode=TwoWay}" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" />		
+		</StackPanel>
+	</Grid>
+</UserControl>

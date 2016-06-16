@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WPF_S39_Commander.App" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.UtilClass" Collapsed="true">
+    <Position X="14.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Diagnostic\UtilClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.UtilEnum&lt;T&gt;" Collapsed="true">
+    <Position X="16.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Diagnostic\UtilEnum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Window1" Collapsed="true">
+    <Position X="34.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Q0VoZitaowgUX5mEkrwUItk4wAbTFPj9Rz7Z3KUHvWE=</HashCode>
+      <FileName>Window1.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.AdvancedSuperTextBlock" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAUAAIAQAIAAEAAgAAAAAAACAgQAABgAA=</HashCode>
+      <FileName>Control\AdvancedSuperTextBlock.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.TextBlockEntry" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAkAAAAAAAACAAAAAQAAAEAIAAAACA=</HashCode>
+      <FileName>Control\AdvancedSuperTextBlock.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.AdvancedTextBlock" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAABAAAABFAAAIIAgIAAABAiBAQACCAAAAAAAAgAA=</HashCode>
+      <FileName>Control\AdvancedTextBlock.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.AlarmSettingsControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAlAACIAAEQABYQAYAAEAAQSgAAChAAAAAACAIAAQgA=</HashCode>
+      <FileName>Control\AlarmSettingsControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.CircularProgressBar" Collapsed="true">
+    <Position X="16.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQIAAABACAAAgAIIAAAAAAAAAgAAAAAAEgACAAAAQw=</HashCode>
+      <FileName>Control\CircularProgressBar.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.ClickToEditTextboxControl" Collapsed="true">
+    <Position X="18.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAEABACAAQAAA=</HashCode>
+      <FileName>Control\ClickToEditTextboxControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.ClockControl" Collapsed="true">
+    <Position X="20" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Control\ClockControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.ExtensionMethods" Collapsed="true">
+    <Position X="13" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\ClockControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.ColorSliderControl" Collapsed="true">
+    <Position X="7.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\ColorSliderControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.CountDownCircleControl" Collapsed="true">
+    <Position X="13" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\CountDownCircleControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.CountDownControl" Collapsed="true">
+    <Position X="14.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DARACABAAQAAQRAAIAAIBAAA4AhAgCAAAAAAACAAAAA=</HashCode>
+      <FileName>Control\CountDownControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.DigitalClock" Collapsed="true">
+    <Position X="18.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JEQAIABAQAIQQIEAQAAAAiAIAJrhAAAKCCBRBkgABoQ=</HashCode>
+      <FileName>Control\DigitalClock.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.DigitalClockSimple" Collapsed="true">
+    <Position X="20" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JEYAIABAAAKQQKEAQAAAAiAIAJphAAALSCARBkgCApQ=</HashCode>
+      <FileName>Control\DigitalClockSimple.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.DynamicInjectionControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAIAAAAAAAAoAAAAIAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\DynamicInjectionControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.FOTAUserControl" Collapsed="true">
+    <Position X="20" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCEAAAAEAFAwAhAEgBAAAABAgAgAgBAAAAAEAAgAABA=</HashCode>
+      <FileName>Control\FOTAUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.OnOffToBooleanConverter" Collapsed="true">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\IValueConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.EmptyStringToZeroConverter" Collapsed="true">
+    <Position X="9.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\IValueConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.IntToStringConverter" Collapsed="true">
+    <Position X="7.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\IValueConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.StringToBooleanConverter" Collapsed="true">
+    <Position X="20" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\IValueConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.DebugDummyConverter" Collapsed="true">
+    <Position X="16.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\IValueConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.LabelTextBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAEAAEBIAAEgAAAgAAAAKAAAIAAAAAAAAA=</HashCode>
+      <FileName>Control\LabelTextBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.LogViewerUserControl" Collapsed="true">
+    <Position X="16.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAABBAAACAAAAAAAAgAAQAAAACQAAAAFBAA=</HashCode>
+      <FileName>Control\LogViewerUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.CollapsibleLogEntry" Collapsed="true">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Control\LogViewerUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.LogEntry" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAQAAAEAIAAAACA=</HashCode>
+      <FileName>Control\LogViewerUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.MediaItem" Collapsed="true">
+    <Position X="18.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAUAAAEAAAIBAAAACAkgAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Control\MediaItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.ProgressButton" Collapsed="true">
+    <Position X="9.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAAAAAAAAAAAABABgACICgAAAAAAggAgRAAAgI=</HashCode>
+      <FileName>Control\ProgressButton.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.PropertyChangedBase" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAABgAAAAIAAAAAAAAAAAQA=</HashCode>
+      <FileName>Control\PropertyChangedBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.SafeGuiWpf" Collapsed="true">
+    <Position X="14.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAIAgAAoAgIAAAYAIgAAAGAQAgAAAAAApAAAQAAAIA=</HashCode>
+      <FileName>Control\SafeGuiWpf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.TextBlockMoo" Collapsed="true">
+    <Position X="7.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAQAAAABAUAAAAAQAAAEAACASAAAAIAAAAAICAAA=</HashCode>
+      <FileName>Control\TextBlockMoo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.RelayCommand" Collapsed="true">
+    <Position X="13" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\TextBlockMoo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.TimeControl" Collapsed="true">
+    <Position X="9.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEQACAAAgQAAAAAQQAAAAAAAQAAAEAARAAEAAAAAA=</HashCode>
+      <FileName>Control\TimeControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.TimeControl2" Collapsed="true">
+    <Position X="11.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAAAAQAAAAQAASAAAAAAAgAAEAAAAhAIAAAAA=</HashCode>
+      <FileName>Control\TimeControl2.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.TimeSettingsControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAEAAAAAAIAAAAAACgAAAAABAAEAAQAEBAAA=</HashCode>
+      <FileName>Control\TimeSettingsControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.WatchGoalSettingsControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEAAAoAAAAAAJGAJAgFAiABgAAAAAAgAAAAAEAAAgQ=</HashCode>
+      <FileName>Control\WatchGoalSettingsControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.WatchSettingsControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAiAIAgAAEAgBIKAIEAgQhAKgAAIAAQAAAhAEEAAQgQ=</HashCode>
+      <FileName>Control\WatchSettingsControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Control.WatchUserSettingsControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="29" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAgEgAAAAIAAoQAAAgAAgAAAAAAAAAAAAEAAAgQ=</HashCode>
+      <FileName>Control\WatchUserSettingsControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.AuditTrail" Collapsed="true">
+    <Position X="14.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAABAAAAQAAAAAAAAAAAAAgAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Diagnostic\AuditTrail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.ConsoleAutomator" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Diagnostic\ConsoleAutomator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.ConsoleInputReadEventArgs" Collapsed="true">
+    <Position X="11.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Diagnostic\ConsoleAutomator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.ConsoleAutomatorBase" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAggBAAAAQAAAABAAAgAAAAAAAACAAIABgAAAAAAA=</HashCode>
+      <FileName>Diagnostic\ConsoleAutomator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.LogCat" Collapsed="true">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkAAAgAAAAAAAAAAAAIAAAAAAAACAAAABAAAAAAgA=</HashCode>
+      <FileName>Diagnostic\LogCatClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.ProcessClass" Collapsed="true">
+    <Position X="7.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAQAAAAQAAAAAAAAAAAAAIAAAAAAAAQA=</HashCode>
+      <FileName>Diagnostic\ProcessClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.PythonConsole" Collapsed="true">
+    <Position X="11.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACCACAAAAAABgAIgAAAIABAAJAAAAAAAAAA=</HashCode>
+      <FileName>Diagnostic\PythonConsole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Diagnostic.StopwatchCountDown" Collapsed="true">
+    <Position X="18.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABACAEAISAAIVAAIAAAAAAgwAgAAAAAIAAAAAAAAUA=</HashCode>
+      <FileName>Diagnostic\StopwatchCountDown.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Properties.ConfigurationReader" Collapsed="true">
+    <Position X="9.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Properties\ConfigurationReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.Properties.Settings" Collapsed="true">
+    <Position X="16.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAOAQEICTAAAVAAAAIAAEAAADACAAAgQAACAACEA=</HashCode>
+      <FileName>Properties\Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.EnergyViewModel" Collapsed="true">
+    <Position X="11.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAEAAAEAAAAIAAAAAEAgCAAAAAEAAAAAAAAAAg=</HashCode>
+      <FileName>WH\EnergyViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.FanHeat" Collapsed="true">
+    <Position X="14.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAACAAAAhIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WH\FanHeat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.FOTACore" Collapsed="true">
+    <Position X="16.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAAAAAAAACAAAAIQAAABEAgAAQEABAAAAAAAIAAAA=</HashCode>
+      <FileName>WH\FOTACore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.FotaEntry" Collapsed="true">
+    <Position X="18.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAEAAAEBAAABAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>WH\FotaEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogActivityDay" Collapsed="true">
+    <Position X="20" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAIAAAABwAEAAAMQABGAABAAAAAQAAAAoA2AAA=</HashCode>
+      <FileName>WH\LogActivityDay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogActivityTimeSlot" Collapsed="true">
+    <Position X="26.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAAAAAIAIAAAAAEAAAOAABGAABAAAAAQAAAAIA0CAA=</HashCode>
+      <FileName>WH\LogActivityTimeSlot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogBody" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgAAAAAAEAgAAAIAAIAABGgAAAAAAAAAAAIAQ0gAA=</HashCode>
+      <FileName>WH\LogBody.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogCommandOnStack" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAMBABGAABAAAAAQAAAAAA0AAA=</HashCode>
+      <FileName>WH\LogCommandOnStack.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogConnect" Collapsed="true">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgIAAMAAAAAgCEAAAPAQBGAABAAQAAQAgAACA0EAE=</HashCode>
+      <FileName>WH\LogConnect.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogConnectStatus" Collapsed="true">
+    <Position X="15.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAACEAAAMCQBGAABAAAAAQAAAAAA0AAA=</HashCode>
+      <FileName>WH\LogConnectStatus.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogEnty" Collapsed="true">
+    <Position X="22.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIwAAIMAAAAAgAECAAfBBBHAIBAAAoAQMkEAAA+AAE=</HashCode>
+      <FileName>WH\LogEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogFanGame" Collapsed="true">
+    <Position X="29" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACkAAAAIAJAABBCEAgAMQABGAABEAAAAQICiAAE2AAA=</HashCode>
+      <FileName>WH\LogFanGame.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogFanTimeSlot" Collapsed="true">
+    <Position X="33.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gggAAAAIAIAAAAAEAAAOAABGAABAAAAAQAIAAAA0SAA=</HashCode>
+      <FileName>WH\LogFanTimeSlot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogList&lt;T&gt;" Collapsed="true">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAABACAAkAQAAAAAAAAgQAAAIAUAAQBAABAA=</HashCode>
+      <FileName>WH\LogList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogMessageType" Collapsed="true">
+    <Position X="14.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WH\LogMessageType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogPedometerDay" Collapsed="true">
+    <Position X="2" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAQIAAAABgAEAAAMQADGAQhAAAAAQAAAAoI2AAA=</HashCode>
+      <FileName>WH\LogPedometerDay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogPedometerTimeSlot" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAYAAAAAEAABMAABGAABAAAAAQAAAAIA0CAA=</HashCode>
+      <FileName>WH\LogPedometerTimeSlot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogSettingsGoals" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgAAEAoAAAAAAAEAAANAABGAABAAAAEQAAgAAA0AAQ=</HashCode>
+      <FileName>WH\LogSettingsGoals.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogSettingsTime" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABuAAAIAAAghAAEAoAcAABWEBRFAGAAUCAmAYA0AAA=</HashCode>
+      <FileName>WH\LogSettingsTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogSettingsUser" Collapsed="true">
+    <Position X="17.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAQAAQAQEAAAdggBGAABAAAAgQAEAAAA0ACA=</HashCode>
+      <FileName>WH\LogSettingsUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogSettingsWatch" Collapsed="true">
+    <Position X="24.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiAEAIIAAAIAAAGAAAMQRBGCADAAUQAQAhAAAA0AAQ=</HashCode>
+      <FileName>WH\LogSettingsWatch.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.LogVersionInformation" Collapsed="true">
+    <Position X="31.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAABAAAAEAEQMgSBOAABIAACCQAAAAAA8AAA=</HashCode>
+      <FileName>WH\LogVersionInformation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.WatchConnectState" Collapsed="true">
+    <Position X="18.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAACAIAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>WH\WatchConnectState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.WatchHeadList" Collapsed="true">
+    <Position X="22" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>WH\WatchHeadSerie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.WatchHeadSerie" Collapsed="true">
+    <Position X="23.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAQgAgAAAAAA=</HashCode>
+      <FileName>WH\WatchHeadSerie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.WatchSettingClass" Collapsed="true">
+    <Position X="25.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIACAAAAAAgAAAAAAAAAAAAAAAAABAAAAAAIEAAAE=</HashCode>
+      <FileName>WH\WatchSettingClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.WHClock" Collapsed="true">
+    <Position X="30.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IARAgAAQZACQQAAAZAAAAIAIgBjEAAQNAABBAkAABAA=</HashCode>
+      <FileName>WH\WHClock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WPF_S39_Commander.WH.WHInfo" Collapsed="true">
+    <Position X="32.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KQEDCAAAAgCQAgEEIAAEAAQAgAoABgEAAAAAUgAAIQA=</HashCode>
+      <FileName>WH\WHInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="WPF_S39_Commander.Control.IPropertyChangedNotifier" Collapsed="true">
+    <Position X="27.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\PropertyChangedBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WPF_S39_Commander.Diagnostic.IConsoleAutomator" Collapsed="true">
+    <Position X="22" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Diagnostic\ConsoleAutomator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WPF_S39_Commander.WH.ILogBody" Collapsed="true">
+    <Position X="25.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAAAAAkAAA=</HashCode>
+      <FileName>WH\LogBody.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WPF_S39_Commander.WH.IDate" Collapsed="true">
+    <Position X="23.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAQAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>WH\LogBody.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WPF_S39_Commander.WH.IScribe" Collapsed="true">
+    <Position X="29" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>WH\LogBody.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="WPF_S39_Commander.WH.IScribeExt" Collapsed="true">
+    <Position X="30.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQAA=</HashCode>
+      <FileName>WH\LogBody.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="WPF_S39_Commander.WH.DTEnum" Collapsed="true">
+    <Position X="23.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJACQAAAAQAAAAAAAAAAAAAAEAIABAAAAAAA=</HashCode>
+      <FileName>WH\WHClock.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WPF_S39_Commander.WH.RINGTONE" Collapsed="true">
+    <Position X="25.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOA=</HashCode>
+      <FileName>WH\WHInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="WPF_S39_Commander.WH.CONEXSTATE" Collapsed="true">
+    <Position X="22" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAABAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WH\WHInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,76 @@
+<UserControl x:Class="WPF_S39_Commander.Control.WatchSettingsControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:WPF_S39_Commander.Control">
+	<UserControl.Resources>
+		<local:StringToBooleanConverter x:Key="StringToBooleanConverter" />
+		<local:OnOffToBooleanConverter x:Key="OnOffToBooleanConverter" />
+	</UserControl.Resources>
+	<Grid>
+	<StackPanel Orientation="Vertical">
+		
+		<!-- Title -->
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+				<Label Content="WatchName" />
+				<TextBox Name="WatchNameBox" Text="{Binding Path=WatchName, Mode=TwoWay}" HorizontalAlignment="Stretch" />		
+		</StackPanel>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+				<Label Content="WatchFlags" />
+				<TextBox Name="WatchFlagBox" Text="{Binding Path=WatchFlags, Mode=TwoWay}" HorizontalAlignment="Stretch" />		
+		</StackPanel>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+				<Label Content="Connection" />
+				<TextBox Name="WatchMACBox" Text="{Binding Path=MacAddress, Mode=TwoWay}"  IsReadOnly="True" />		
+				<TextBox Name="ConexStatusBox" Text="{Binding Path=ConexStatus, Mode=TwoWay}"  IsReadOnly="True" />		
+		</StackPanel>
+		
+		<!-- Radio -->
+		<StackPanel Orientation="Horizontal">
+
+			<StackPanel Orientation="Vertical">
+				<Label Content="Beep" />
+			    <RadioButton GroupName="BEEPTTGroup" Content="on" IsChecked="{Binding Path=Beep, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=on, Mode=TwoWay}" />
+			    <RadioButton GroupName="BEEPTTGroup" Content="off" IsChecked="{Binding Path=Beep, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=off, Mode=TwoWay}" />
+			</StackPanel>
+	
+			<StackPanel Orientation="Vertical">
+				<Label Content="Distance" />
+				<RadioButton GroupName="DistCultureGroup" Content="km"  IsChecked="{Binding Path=DistanceCulture, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=km, Mode=TwoWay}"  />
+				<RadioButton GroupName="DistCultureGroup" Content="miles" IsChecked="{Binding Path=DistanceCulture, Converter={StaticResource StringToBooleanConverter}, ConverterParameter=miles, Mode=TwoWay}" />
+			</StackPanel>
+			
+			<StackPanel Orientation="Vertical">
+				<Label Content="Timer" />
+				<ListView Name="RingtoneListView" 
+			        SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" SelectionChanged="RingtoneListView_SelectionChanged" >
+					<!-- here set the itemTemplate to a TextBlock that can wraps-->
+			        <ListView.ItemTemplate>
+			            <DataTemplate>
+			                <TextBlock Text="{Binding}" TextWrapping="Wrap"></TextBlock>
+			            </DataTemplate>
+			        </ListView.ItemTemplate>
+			</ListView>
+			</StackPanel>
+	
+			<StackPanel Orientation="Vertical">
+				<Label Content="Menu" />
+				  <CheckBox Name="cbMenu1" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged" IsChecked="{Binding Path=Menu1, Mode=TwoWay, Converter={StaticResource OnOffToBooleanConverter}}">Time</CheckBox>
+				  <CheckBox Name="cbMenu2" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged" IsChecked="{Binding Path=Menu2, Mode=TwoWay, Converter={StaticResource OnOffToBooleanConverter}}">Activity</CheckBox>
+				  <CheckBox Name="cbMenu3" Checked="cbFeature_CheckedChanged" Unchecked="cbFeature_CheckedChanged" IsChecked="{Binding Path=Menu3, Mode=TwoWay, Converter={StaticResource OnOffToBooleanConverter}}">Fan</CheckBox>
+			</StackPanel>
+		</StackPanel>
+	</StackPanel>		
+		<Button
+			Name="BtnGet"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Bottom"
+			Content="Get"
+			Click="BtnGet_Click" />
+		<Button
+			Name="BtnSet"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Bottom"
+			Content="Set"
+			Click="BtnSet_Click" />
+	</Grid>
+</UserControl>

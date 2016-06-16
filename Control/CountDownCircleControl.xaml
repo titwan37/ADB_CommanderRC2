@@ -1,0 +1,45 @@
+<UserControl x:Class="WPF_S39_Commander.Control.CountDownCircleControl"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<UserControl.Triggers>
+	    <EventTrigger RoutedEvent="Page.Loaded">
+	        <BeginStoryboard>
+	            <Storyboard >
+	                <!--RepeatBehavior="Forever"
+	                AutoReverse="True" >-->
+	                <PointAnimationUsingPath
+	                        Storyboard.TargetName="arc"
+	                        Storyboard.TargetProperty="Point"
+	                        Duration="0:0:30">
+	                    <PointAnimationUsingPath.PathGeometry>
+	                        <PathGeometry>
+	                            <PathFigure StartPoint="200 100">
+	                                <ArcSegment Size="100 100" Point="200 300" SweepDirection="Clockwise"  />
+	                                <ArcSegment Size="100 100" Point="200 100" SweepDirection="Clockwise" />
+	                            </PathFigure>
+	                        </PathGeometry>
+	                    </PointAnimationUsingPath.PathGeometry>
+	                </PointAnimationUsingPath>
+	
+	                <BooleanAnimationUsingKeyFrames
+	                        Storyboard.TargetName="arc"
+	                        Storyboard.TargetProperty="IsLargeArc">
+	                    <DiscreteBooleanKeyFrame KeyTime="0:0:15" Value="True" />
+	                    <DiscreteBooleanKeyFrame KeyTime="0:0:30" Value="False" />
+	                </BooleanAnimationUsingKeyFrames>
+	            </Storyboard>
+	        </BeginStoryboard>
+	    </EventTrigger>
+	</UserControl.Triggers>
+	<Grid>
+		<Path Stroke="Blue" StrokeThickness="3" Fill="Transparent">
+		    <Path.Data>
+		        <PathGeometry>
+		            <PathFigure StartPoint="200 100" IsClosed="False">
+		                <ArcSegment x:Name="arc" Size="100 100" SweepDirection="Clockwise" />
+		            </PathFigure>
+		        </PathGeometry>
+		    </Path.Data>
+		</Path>
+	</Grid>
+</UserControl>

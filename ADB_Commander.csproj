@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{EAA9D6FE-D9C2-4E62-9AB4-4379C34E314B}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WPF_S39_Commander</RootNamespace>
+    <AssemblyName>WPF_S39_ADB_Commander</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\FalempiA\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+	<!-- 
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+	 -->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPython">
+      <HintPath>..\IronPython 2.7\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules">
+      <HintPath>..\IronPython 2.7\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>..\IronPython 2.7\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting" />
+    <Reference Include="Microsoft.Scripting.Metadata">
+      <HintPath>..\IronPython 2.7\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System">
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug" />
+    <Reference Include="System.Diagnostics.Tools" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AdvancedSuperTextBlock.xaml.cs">
+      <DependentUpon>AdvancedSuperTextBlock.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\AdvancedTextBlock.xaml.cs">
+      <DependentUpon>AdvancedTextBlock.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\AlarmSettingsControl.xaml.cs">
+      <DependentUpon>AlarmSettingsControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\CircularProgressBar.xaml.cs">
+      <DependentUpon>CircularProgressBar.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\ClickToEditTextboxControl.xaml.cs">
+      <DependentUpon>ClickToEditTextboxControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\ClockControl.xaml.cs">
+      <DependentUpon>ClockControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\ColorSliderControl.xaml.cs">
+      <DependentUpon>ColorSliderControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\CountDownCircleControl.xaml.cs">
+      <DependentUpon>CountDownCircleControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\CountDownControl.xaml.cs">
+      <DependentUpon>CountDownControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\DigitalClock.xaml.cs">
+      <DependentUpon>DigitalClock.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\DigitalClockSimple.xaml.cs" />
+    <Compile Include="Control\DynamicInjectionControl.xaml.cs">
+      <DependentUpon>DynamicInjectionControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FOTAUserControl.xaml.cs">
+      <DependentUpon>FOTAUserControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\IValueConverter.cs" />
+    <Compile Include="Control\LabelTextBox.xaml.cs">
+      <DependentUpon>LabelTextBox.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\LogViewerUserControl.xaml.cs">
+      <DependentUpon>LogViewerUserControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\MediaItem.cs" />
+    <Compile Include="Control\ProgressButton.xaml.cs">
+      <DependentUpon>ProgressButton.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\PropertyChangedBase.cs" />
+    <Compile Include="Control\SafeGuiWpf.cs" />
+    <Compile Include="Control\TextBlockMoo.cs" />
+    <Compile Include="Control\TimeControl.xaml.cs">
+      <DependentUpon>TimeControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\TimeControl2.xaml.cs">
+      <DependentUpon>TimeControl2.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\TimeSettingsControl.xaml.cs">
+      <DependentUpon>TimeSettingsControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\WatchGoalSettingsControl.xaml.cs">
+      <DependentUpon>WatchGoalSettingsControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\WatchSettingsControl.xaml.cs">
+      <DependentUpon>WatchSettingsControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\WatchUserSettingsControl.xaml.cs">
+      <DependentUpon>WatchUserSettingsControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Diagnostic\AuditTrail.cs" />
+    <Compile Include="Diagnostic\ConsoleAutomator.cs" />
+    <Compile Include="Diagnostic\StopwatchCountDown.cs" />
+    <Compile Include="Diagnostic\PythonConsole.cs" />
+    <Compile Include="Diagnostic\UtilClass.cs" />
+    <Compile Include="Diagnostic\LogCatClass.cs" />
+    <Compile Include="Diagnostic\ProcessClass.cs" />
+    <Compile Include="Diagnostic\UtilEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\ConfigurationReader.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\WPFAssemblyInfo.cs" />
+    <Compile Include="WH\EnergyViewModel.cs" />
+    <Compile Include="WH\FanHeat.cs" />
+    <Compile Include="WH\FOTACore.cs" />
+    <Compile Include="WH\FotaEntry.cs" />
+    <Compile Include="WH\LogActivityDay.cs" />
+    <Compile Include="WH\LogActivityTimeSlot.cs" />
+    <Compile Include="WH\LogBody.cs" />
+    <Compile Include="WH\LogCommandOnStack.cs" />
+    <Compile Include="WH\LogConnect.cs" />
+    <Compile Include="WH\LogConnectStatus.cs" />
+    <Compile Include="WH\LogEntry.cs" />
+    <Compile Include="WH\LogList.cs" />
+    <Compile Include="WH\LogMessageType.cs" />
+    <Compile Include="WH\LogSettingsGoals.cs" />
+    <Compile Include="WH\LogVersionInformation.cs" />
+    <Compile Include="WH\WatchConnectState.cs" />
+    <Compile Include="WH\WatchSettingClass.cs" />
+    <Compile Include="WH\LogSettingsUser.cs" />
+    <Compile Include="WH\LogFanGame.cs" />
+    <Compile Include="WH\LogFanTimeSlot.cs" />
+    <Compile Include="WH\LogPedometerDay.cs" />
+    <Compile Include="WH\LogPedometerTimeSlot.cs" />
+    <Compile Include="WH\LogSettingsWatch.cs" />
+    <Compile Include="WH\LogSettingsTime.cs" />
+    <Compile Include="WH\WatchHeadSerie.cs" />
+    <Compile Include="WH\WHClock.cs" />
+    <Compile Include="WH\WHInfo.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Control\AdvancedSuperTextBlock.xaml" />
+    <Page Include="Control\AdvancedTextBlock.xaml" />
+    <Page Include="Control\AlarmSettingsControl.xaml" />
+    <Page Include="Control\CircularProgressBar.xaml" />
+    <Page Include="Control\ClickToEditTextboxControl.xaml" />
+    <Page Include="Control\ClockControl.xaml" />
+    <Page Include="Control\ColorSliderControl.xaml" />
+    <Page Include="Control\CountDownCircleControl.xaml" />
+    <Page Include="Control\CountDownControl.xaml" />
+    <Page Include="Control\DigitalClock.xaml" />
+    <Page Include="Control\DigitalClockSimple.xaml" />
+    <Page Include="Control\DynamicInjectionControl.xaml" />
+    <Page Include="Control\FOTAUserControl.xaml" />
+    <Page Include="Control\LabelTextBox.xaml" />
+    <Page Include="Control\LogViewerUserControl.xaml" />
+    <Page Include="Control\ProgressButton.xaml" />
+    <Page Include="Control\TimeControl.xaml" />
+    <Page Include="Control\TimeControl2.xaml" />
+    <Page Include="Control\TimeSettingsControl.xaml" />
+    <Page Include="Control\WatchGoalSettingsControl.xaml" />
+    <Page Include="Control\WatchSettingsControl.xaml" />
+    <Page Include="Control\WatchUserSettingsControl.xaml" />
+    <Page Include="Window1.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="Commands.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sequence.tst">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultSequence.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pythonConsoleInit.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BTConnectionStabilityMetrics.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="GlobalClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ADB\" />
+    <Folder Include="Stats\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
